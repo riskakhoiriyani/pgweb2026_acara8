@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Data Penduduk</title>
+</head>
+
+<body>
+
+<h2>Input Data Penduduk</h2>
+
+<form action="input.php" method="post" onsubmit="return validasi()">
+
+    <label>Kecamatan:</label><br>
+    <input type="text" name="kecamatan" id="kecamatan"><br><br>
+
+    <label>Longitude:</label><br>
+    <input type="number" step="any" name="longitude" id="longitude"><br><br>
+
+    <label>Latitude:</label><br>
+    <input type="number" step="any" name="latitude" id="latitude"><br><br>
+
+    <label>Luas:</label><br>
+    <input type="number" step="any" name="luas" id="luas"><br><br>
+
+    <label>Jumlah Penduduk:</label><br>
+    <input type="number" name="jumlah_penduduk" id="jumlah_penduduk"><br><br>
+
+    <input type="submit" value="Simpan">
+
+</form>
+
+<script>
+function validasi() {
+
+    var kecamatan = document.getElementById("kecamatan").value;
+    var luas = document.getElementById("luas").value;
+    var jumlahPenduduk = document.getElementById("jumlah_penduduk").value;
+
+    if (kecamatan == "") {
+        alert("Kecamatan harus diisi!");
+        return false;
+    }
+
+    if (luas == "" || luas <= 0) {
+        alert("Luas harus lebih dari 0!");
+        return false;
+    }
+
+    if (jumlahPenduduk == "" || jumlahPenduduk < 0) {
+        alert("Jumlah penduduk tidak boleh kosong atau negatif!");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
